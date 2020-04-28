@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option csharp_namespace="ZodiacFinderGrpc";
+
+package ZodiacFinderGrpc;
+
+service ZodiacService {
+  rpc ZodieFinder (RequestBirth) returns (Reply) {}
+}
+
+message RequestBirth{
+  int32 day  = 1;
+  int32 mo   = 2;
+  int32 year = 3;
+}
+
+message Reply{
+  ZodiacSign sign = 1;
+}
+
+enum ZodiacSign {
+  Varsator = 0;
+  Pesti = 1;
+  Berbec = 2;
+  Taur = 3;
+  Gemeni = 4;
+  Rac = 5;
+  Leu = 6;
+  Fecioara = 7;
+  Balanta = 8;
+  Scorpion = 9;
+  Sagetator = 10;
+  Capricorn = 11;
+}
